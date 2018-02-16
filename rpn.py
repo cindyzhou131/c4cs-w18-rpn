@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 from termcolor import colored, cprint
-
+import readline
 def calculate(arg):
     stack = list()
     for token in arg.split():
@@ -27,6 +27,8 @@ def calculate(arg):
                 stack.append(arg1 * arg2)
             elif(token == '/'):
                 stack.append(arg1/arg2)
+            elif(token == '^'):
+                stack.append(arg1**arg2)
     # print(len(stack))
     if(len(stack) == 1):
         return stack.pop()
@@ -41,9 +43,9 @@ def calculate(arg):
 
 
 def main():
+    cprint('RNP CALCULATOR', 'magenta', attrs=['blink'])
     while True:
-        cprint('RNP CALCULATOR', 'magenta', attrs=['blink'])
-        calculate(input("rnp calc> "))
+        cprint(calculate(input("rnp calc> ")), 'cyan')
 
 
 if __name__ == '__main__':
