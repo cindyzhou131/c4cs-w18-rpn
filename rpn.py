@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+from termcolor import colored, cprint
 
 def calculate(arg):
     stack = list()
@@ -13,7 +15,9 @@ def calculate(arg):
                 arg1 = stack.pop()
                 arg2 = stack.pop()
             else:
-                print("error")
+                cprint('Malform expression!', 'green', 'on_red')
+                return
+
 
             if(token == '+'):
                 stack.append(arg1 + arg2)
@@ -27,7 +31,7 @@ def calculate(arg):
     if(len(stack) == 1):
         return stack.pop()
     else:
-        print("Malformed expression")
+        cprint('Malform expression!', 'green', 'on_red')
         # stack.append(token)
 
 
@@ -38,6 +42,7 @@ def calculate(arg):
 
 def main():
     while True:
+        cprint('RNP CALCULATOR', 'magenta', attrs=['blink'])
         calculate(input("rnp calc> "))
 
 
