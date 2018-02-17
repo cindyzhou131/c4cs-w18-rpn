@@ -29,6 +29,8 @@ def calculate(arg):
                 stack.append(arg1/arg2)
             elif(token == '^'):
                 stack.append(arg1**arg2)
+            elif(toke == '%'):
+                stack.append(arg1%arg2)
     # print(len(stack))
     if(len(stack) == 1):
         return stack.pop()
