@@ -18,3 +18,12 @@ class TestBasics(unittest.TestCase):
     def test_exp(self):
         result = rpn.calculate("1 1 ^")
         self.assertEqual(1, result)
+    def test_sin(self):
+        result = rpn.calculate("0 sin")
+        self.assertEqual(0, result)
+    def test_cos(self):
+        result = rpn.calculate("0 sin")
+        self.assertEqual(1, result)
+    def test_exp(self):
+        result = rpn.calculate("1 1 ^")
+        self.assertEqual(1, result)
